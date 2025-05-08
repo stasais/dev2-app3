@@ -24,7 +24,7 @@ jobs:
                     python -m pip install -e .
                     python -m pip install -e .[lint]
             - name: Run linters
-                run: ruff check --output=github .
+                run: ruff check --output-format=github .
 
                     
                     
