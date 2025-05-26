@@ -1,0 +1,4 @@
+docker run --rm --name dev2-container -ti python:3.13.3-slim bash
+docker build -t dev2-app-custom:latest .
+docker cp src dev2-container:/app
+docker run --rm -p 9999:8000 dev2-app-custom:latest 
