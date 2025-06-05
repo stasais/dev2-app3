@@ -8,3 +8,16 @@ docker run --rm -p 9999:8000 dev2-app-custom:latest
 
 git tag -a v1.0 -m 'Release version 1.0'
 git push origin v1.0
+
+### Kubernets
+kubectl config view
+kubectl config set-context --current --namespace=dev2
+kubectl create namespace dev2
+kubectl get ns
+kubectl apply -f pod-ngx.yaml
+kubectl get pods
+kubectl port-forward pod/nginx 8000:80
+kubectl exec -ti pod/httpd -- sh
+kubectl get pods --show-labels
+kubectl label pod httpd app=test --overwrite
+
